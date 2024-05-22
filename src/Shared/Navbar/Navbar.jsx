@@ -2,7 +2,7 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 import { MdAddIcCall, MdOutlineCategory } from "react-icons/md";
 import './navbar.css'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { IoPersonOutline } from "react-icons/io5";
 import { RxDividerVertical } from "react-icons/rx";
@@ -63,7 +63,9 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex justify-end items-center gap-10">
           <BsCart size={20}></BsCart>
+          <Link to='/register'>
           <IoPersonOutline size={20} />
+          </Link>
           <RxDividerVertical size={20} />
           <TbMenuDeep size={20} />
         </div>

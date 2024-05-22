@@ -6,7 +6,7 @@ import bannerImg from '../../../assets/Banner1-removebg-preview.png'
 const Banner = () => {
     return (
         <div className='bg-[#C1DCDC] rounded-xl flex justify-between'>
-            <section className='w-[40%] space-y-10 my-10 px-10 pt-10 pb-6'>
+            <section className='w-[40%] space-y-16 my-10 px-10 pt-10 '>
                 <div>
                     <h1 className='text-6xl font-bold'>
                         Buy your dream plants
