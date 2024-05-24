@@ -21,11 +21,12 @@ const router = createBrowserRouter([
         {
           path: '/products',
           element: <Products></Products>,
-          loader: ()=> fetch(`/products.json`)
+          loader: ()=> fetch(`http://localhost:5000/products`)
         },
         {
-          path: '/productDetails',
-          element: <ProductDetails></ProductDetails>
+          path: '/productDetails/:id',
+          element: <ProductDetails></ProductDetails>,
+          loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`)
         },
         {
             path: '/login',
