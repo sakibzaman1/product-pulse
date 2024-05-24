@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const axiosPublic = axios.create({
-    baseURL: `https://reel-radar-server.vercel.app`
+    baseURL: `http://localhost:5000`
 })
 
 const UseAxiosPublic = () => {

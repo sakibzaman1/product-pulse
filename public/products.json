@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "name": "Fiddle Leaf Fig",
+        "category": "Indoor Plant",
+        "brand": "GreenHouse",
+        "price": 49.99,
+        "average_rating": 4.5,
+        "description": "The Fiddle Leaf Fig is a popular indoor plant known for its large, glossy leaves and striking appearance.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "3-4 feet",
+            "light": "Bright, indirect light",
+            "water": "Water when top inch of soil is dry",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/HtdpYcG/fiddle-leaf-fig-tree-ikea.png",
+            "https://i.ibb.co/WVWkyF2/faux-potted-fiddle-leaf-fig-7.jpg",
+            "https://i.ibb.co/9pS9KQc/fiddle-leaf-fig-plant-1.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Snake Plant",
+        "category": "Indoor Plant",
+        "brand": "Urban Jungle",
+        "price": 29.99,
+        "average_rating": 4.7,
+        "description": "The Snake Plant is a hardy and easy-to-care-for plant with long, upright leaves. It's great for improving indoor air quality.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "2-3 feet",
+            "light": "Low to bright indirect light",
+            "water": "Water every 2-3 weeks",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/nDdxX4r/snake-plant1.jpg",
+            "https://i.ibb.co/tmj82BL/snake-plant-3.jpg",
+            "https://i.ibb.co/dm4JHpc/snake-plant-4985304-1280.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Peace Lily",
+        "category": "Indoor Plant",
+        "brand": "Pure Plants",
+        "price": 24.99,
+        "average_rating": 4.4,
+        "description": "The Peace Lily is an elegant plant with dark green leaves and white flowers. It's known for its air-purifying qualities.",
+        "availability": "Out of stock",
+        "specifications": {
+            "height": "1-2 feet",
+            "light": "Low to medium indirect light",
+            "water": "Keep soil moist",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/DQJFtHP/peace-lilly1.jpg",
+            "https://i.ibb.co/gdfX8jN/peace-lilly2.jpg",
+            "https://i.ibb.co/72qVGwJ/peace-lilly3.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Monstera Deliciosa",
+        "category": "Indoor Plant",
+        "brand": "Tropical Haven",
+        "price": 39.99,
+        "average_rating": 4.6,
+        "description": "Monstera Deliciosa, also known as the Swiss Cheese Plant, has large, perforated leaves that add a tropical vibe to any space.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "3-5 feet",
+            "light": "Bright, indirect light",
+            "water": "Water when top inch of soil is dry",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/7bL9nnF/Monstera-Deliciosa1.webp",
+            "https://i.ibb.co/T4tJPZ1/monstera2.webp",
+            "https://i.ibb.co/YZ7qc8M/monstera3.webp"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Spider Plant",
+        "category": "Indoor Plant",
+        "brand": "Green Essentials",
+        "price": 19.99,
+        "average_rating": 4.3,
+        "description": "The Spider Plant is a popular choice for beginners, known for its long, arching leaves and air-purifying properties.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "1-2 feet",
+            "light": "Bright, indirect light",
+            "water": "Water when top inch of soil is dry",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/3N2ZFb0/spider1.jpg",
+            "https://i.ibb.co/RCKQ57K/spider2.jpg",
+            "https://i.ibb.co/gmJq37w/spider3.jpg"
+        ]
+    }
+]
+
+
+
+
+
+
+
+
+

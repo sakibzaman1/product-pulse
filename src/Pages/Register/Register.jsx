@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiLowVision, BiShowAlt } from "react-icons/bi";
 import { MdAccountCircle } from "react-icons/md";
+import bannerImg from '../../assets/Banner1-removebg-preview.png'
+
 
 import swal from "sweetalert";
 
@@ -128,7 +130,7 @@ const Register = () => {
               data-aos-duration="2000">
               <img
                 className="w-80"
-                src="https://i.ibb.co/RBnQK2s/Reel-Radar-no-bg.png"
+                src={bannerImg}
                 alt=""
               />
   
@@ -142,7 +144,7 @@ const Register = () => {
             <div className="divider lg:divider-horizontal">
               <MdAccountCircle size={50}></MdAccountCircle>
             </div>
-            <div className="card lg:w-[60%]  flex-shrink-0 max-w-lg shadow-2xl " data-aos="zoom-in"
+            <div className="card lg:w-[60%]  flex-shrink-0 max-w-lg shadow-2xl bg-[#C1DCDC] " data-aos="zoom-in"
               data-aos-duration="2000">
               <form onSubmit={handleRegister} className="card-body mt-10 lg:mt-0">
                 <h1 className="text-5xl font-bold text-center mb-10">
@@ -257,9 +259,9 @@ const Register = () => {
                 </div>
   
                 <div className="text-center pt-10">
-                  <small className="font-medium text-white">
+                  <small className="font-medium text-black">
                     Already Have an Account? Please
-                    <Link to="/signin" className="text-green-900 ml-2 font-bold">
+                    <Link to="/login" className="text-green-900 ml-2 font-bold">
                       <button onClick={goToTop}>Sign in</button>
                     </Link>
                   </small>

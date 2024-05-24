@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaHome } from "react-icons/fa";
 import { MdAddIcCall, MdOutlineCategory } from "react-icons/md";
 import './navbar.css'
@@ -8,8 +8,23 @@ import { IoPersonOutline } from "react-icons/io5";
 import { RxDividerVertical } from "react-icons/rx";
 import { TbMenuDeep } from "react-icons/tb";
 import { AiFillProduct, AiOutlineProduct } from "react-icons/ai";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const {user, signOutUser} = useContext(AuthContext);
+
+  
+    // Sign Out Button
+
+    const handleSignOut = () => {
+      signOutUser()
+          .then(() => {
+            console.log('User Signed Out')
+          })
+          .catch(error => console.log(error.message))
+  }
+  
+
   const navOptions = (
     <>
       <NavLink to="/" className="hover:text-gray-900  font-semi-bold navLinks"><span className='pb-2 flex items-center gap-2'><FaHome></FaHome>Home</span></NavLink>
@@ -56,7 +71,7 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className=" text-xl font-mono font-bold">GreenMind</a>
+          <a className=" text-xl font-mono font-bold">GREENMIND</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-10 text-sm">{navOptions}</ul>
@@ -64,10 +79,26 @@ const Navbar = () => {
         <div className="navbar-end flex justify-end items-center gap-10">
           <BsCart size={20}></BsCart>
           <Link to='/register'>
-          <IoPersonOutline size={20} />
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+       
+          {
+            user? <div className="w-8 rounded-full border-2"> <img alt="Tailwind CSS Navbar component" src={user?.photoURL } /></div> :
+            <IoPersonOutline size={20} />
+          }
+        
+      </div>
+         
           </Link>
           <RxDividerVertical size={20} />
-          <TbMenuDeep size={20} />
+          <div>
+          <details className="dropdown">
+  <summary className="m-1 btn"><TbMenuDeep size={20} /></summary>
+  <ul className="p-2 shadow  dropdown-content z-[1] bg-base-100 rounded-xl ">
+    <li >{user? <button onClick={handleSignOut}>Logout</button> : <small>Login</small>}</li>
+  </ul>
+</details>
+          </div>
+          
         </div>
       </div>
     </div>
