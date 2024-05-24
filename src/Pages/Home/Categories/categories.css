@@ -1,0 +1,40 @@
+.mySwiper {
+    padding-bottom: 50px; /* Adjust as needed for pagination */
+  }
+  
+  .swiper-slide {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .swiper-slide-visible {
+    transform: scale(0.8); /* Scale down the visible slides */
+  }
+  
+  .swiper-slide-active {
+    transform: scale(0.7); /* Keep the active slide at normal scale */
+    transition: transform 0.9s ease; /* Adjust transition timing and easing */
+  }
+  
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    transform: scale(0.8) translateY(-80px); /* Move the next and previous slides up */
+    opacity: 1; /* Optional: reduce opacity for adjacent slides */
+    height: 800px;
+    transition: transform 0.9s ease; /* Adjust transition timing and easing */
+  }
+  
+  /* Additional CSS to style the centered slide with zoom effect */
+  .product-card {
+    position: relative;
+    overflow: hidden;
+ 
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card img {
+    border-radius: 10px;
+  }
+  
+  .swiper-wrapper {
+    height: 500px;
+  }

@@ -103,6 +103,111 @@
             "https://i.ibb.co/RCKQ57K/spider2.jpg",
             "https://i.ibb.co/gmJq37w/spider3.jpg"
         ]
+    },
+    {
+        "id": 6,
+        "name": "Aloe Vera",
+        "category": "Indoor Plant",
+        "brand": "Natural Bliss",
+        "price": 14.99,
+        "average_rating": 4.8,
+        "description": "Aloe Vera is a versatile plant known for its medicinal properties and easy care. Perfect for sunny windowsills.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "1-2 feet",
+            "light": "Bright, direct light",
+            "water": "Water every 3 weeks",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/NFp5ZTR/aloe-vera1.jpg",
+            "https://i.ibb.co/YLpZbfs/aloe-vera2.jpg",
+            "https://i.ibb.co/8YygZ1D/aloe-vera3.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Rubber Plant",
+        "category": "Indoor Plant",
+        "brand": "Green House",
+        "price": 34.99,
+        "average_rating": 4.6,
+        "description": "The Rubber Plant is known for its large, glossy leaves and ability to thrive in low light conditions.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "4-6 feet",
+            "light": "Bright, indirect light",
+            "water": "Water when top inch of soil is dry",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/2Y6XSK9/rubber-plant1.jpg",
+            "https://i.ibb.co/DK8wS5Z/rubber-plant2.jpg",
+            "https://i.ibb.co/x1GrSPT/rubber-plant3.jpg"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "ZZ Plant",
+        "category": "Indoor Plant",
+        "brand": "Urban Jungle",
+        "price": 24.99,
+        "average_rating": 4.7,
+        "description": "The ZZ Plant is a hardy indoor plant that tolerates neglect. It's perfect for low light and low maintenance environments.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "2-3 feet",
+            "light": "Low to bright indirect light",
+            "water": "Water every 2-3 weeks",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/sjLfT8x/zz-plant1.jpg",
+            "https://i.ibb.co/SvdHKT2/zz-plant2.jpg",
+            "https://i.ibb.co/hMxH7sw/zz-plant3.jpg"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Pothos",
+        "category": "Indoor Plant",
+        "brand": "Pure Plants",
+        "price": 19.99,
+        "average_rating": 4.5,
+        "description": "Pothos is an easy-to-grow plant that can thrive in a variety of lighting conditions. Its trailing vines make it great for hanging baskets.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "1-2 feet",
+            "light": "Low to bright indirect light",
+            "water": "Water when top inch of soil is dry",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/KwpL5QX/pothos1.jpg",
+            "https://i.ibb.co/fY78cLT/pothos2.jpg",
+            "https://i.ibb.co/6sbRfJc/pothos3.jpg"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Calathea",
+        "category": "Indoor Plant",
+        "brand": "Tropical Haven",
+        "price": 29.99,
+        "average_rating": 4.4,
+        "description": "Calathea plants are known for their stunning foliage with unique patterns. They thrive in indirect light and high humidity.",
+        "availability": "In stock",
+        "specifications": {
+            "height": "1-2 feet",
+            "light": "Low to medium indirect light",
+            "water": "Keep soil moist",
+            "soil": "Well-draining potting mix"
+        },
+        "images": [
+            "https://i.ibb.co/5LhChR3/calathea1.jpg",
+            "https://i.ibb.co/4gzGbRX/calathea2.jpg",
+            "https://i.ibb.co/nLQht7m/calathea3.jpg"
+        ]
     }
 ]
 
