@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useLoaderData } from "react-router-dom";
@@ -8,20 +8,44 @@ import StarRatings from "react-star-ratings";
 import { AuthContext } from "../../Providers/AuthProvider";
 import swal from "sweetalert";
 import surveyImg from "../../assets/communitysurvey-removebg-preview.png";
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import {
   AiFillDislike,
   AiFillLike,
   AiOutlineDislike,
   AiOutlineLike,
 } from "react-icons/ai";
+import Recaptcha from "react-recaptcha";
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
   const currentDate = new Date().toISOString();
+  const [disabled, setDisabled] = useState(true)
+
+  const captchaRef = useRef(null)
+
+  useEffect(()=> {
+      loadCaptchaEnginge(6)
+  },[])
+
+  
 
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
   const [reply, setReply] = useState('');
+
+  const handleValidateCaptcha = () => {
+    const userCaptchaValue = captchaRef.current.value;
+    
+    if(validateCaptcha(userCaptchaValue)){
+      
+      setDisabled(false);
+    }
+    else{
+      
+      setDisabled(true)
+    }
+  }
 
   const handleLike = () => {
     setLiked(!liked); // Toggle liked state
@@ -44,7 +68,7 @@ const ProductDetails = () => {
   const [rating, setRating] = useState(0); // State for storing the rating value
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews`)
+    fetch(`https://product-pulse-server-five.vercel.app/reviews`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -74,7 +98,9 @@ const ProductDetails = () => {
 
     console.log(addedReview);
 
-    fetch("http://localhost:5000/reviews", {
+  
+
+    fetch("https://product-pulse-server-five.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -191,7 +217,15 @@ const ProductDetails = () => {
                     starSpacing="10px"
                   />
                 </div>
-                <button className="bg-gradient-to-r pl-4 py-2 rounded-lg from-[#C1DCDC] to-transparent text-black text-start w-[50%] mt-4">
+                {/* reCAPTCHA */}
+                <div className="form-control">
+          <label className="label">
+          <LoadCanvasTemplate />
+          </label>
+          <input type="Type the captcha above" ref={captchaRef} placeholder="Captcha" name='captcha' className="input input-bordered" required />
+          <button onClick={handleValidateCaptcha} className="btn btn-xs my-4">Validate</button>
+        </div>
+                <button disabled={disabled} className="bg-gradient-to-r pl-4 py-2 rounded-lg from-[#C1DCDC] to-transparent text-black text-start w-[50%] mt-4">
                   Submit
                 </button>
               </form>

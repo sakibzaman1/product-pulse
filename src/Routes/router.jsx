@@ -7,6 +7,7 @@ import Register from '../Pages/Register/Register';
 import Products from '../Pages/Products/Products';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
+import CategoryPage from '../Pages/CategoryPage/CategoryPage';
 
 const router = createBrowserRouter([
     {
@@ -21,12 +22,16 @@ const router = createBrowserRouter([
         {
           path: '/products',
           element: <Products></Products>,
-          loader: ()=> fetch(`http://localhost:5000/products`)
+          loader: ()=> fetch(`https://product-pulse-server-five.vercel.app/products`)
         },
         {
           path: '/productDetails/:id',
           element: <ProductDetails></ProductDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/products/${params.id}`)
+          loader: ({params})=> fetch(`https://product-pulse-server-five.vercel.app/products/${params.id}`)
+        },
+        {
+          path: '/categoryPage',
+          element: <CategoryPage></CategoryPage>
         },
         {
             path: '/login',

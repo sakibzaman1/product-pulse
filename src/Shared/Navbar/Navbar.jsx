@@ -29,10 +29,10 @@ const Navbar = () => {
     <>
       <NavLink to="/" className="hover:text-gray-900  font-semi-bold navLinks"><span className='pb-2 flex items-center gap-2'><FaHome></FaHome>Home</span></NavLink>
       <NavLink to='/products' className="hover:text-gray-900  font-semi-bold navLinks"><span className='pb-2 flex items-center gap-2'><AiFillProduct />Products</span></NavLink>
-      <NavLink  className="hover:text-gray-900  font-semi-bold navLinks"><span className='pb-2 flex items-center gap-2'>
+      <NavLink to='/categoryPage'  className="hover:text-gray-900  font-semi-bold navLinks"><span className='pb-2 flex items-center gap-2'>
       <details className="dropdown">
   <summary className="">Categories</summary>
-  <ul className=" menu dropdown-content z-[1]">
+  <ul className=" p-2 shadow  dropdown-content z-[1] bg-base-100 rounded-xl">
     <li><a>Item 1</a></li>
     <li><a>Item 2</a></li>
   </ul>
