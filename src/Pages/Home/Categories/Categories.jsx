@@ -6,9 +6,18 @@ import "./categories.css"; // Import custom styles
 import { Pagination, Zoom } from "swiper/modules";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 const Categories = () => {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const [products, setProducts] = useState([]);
+
+ 
 
   useEffect(() => {
     fetch(`https://product-pulse-server-five.vercel.app/products`)
@@ -26,8 +35,22 @@ const Categories = () => {
       </section>
       <section className="mx-auto  text-center bg-[#C1DCDC] p-20">
         <Swiper
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          425: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
          speed={2000} // Adjust slide animation speed (milliseconds)
-          slidesPerView={3}
+          // slidesPerView={3}
           spaceBetween={30}
           centeredSlides={true}
           initialSlide={1} // Ensures the middle slide is centered upon landing
@@ -45,7 +68,8 @@ const Categories = () => {
         >
           {products?.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="product-card">
+              <div className="product-card" data-aos="zoom-in"
+        data-aos-duration="2000">
                 <img className="w-[600px] h-[500px]" src={product?.images[1]} alt={product?.name} />
                 <h2 className="mt-6 text-xl font-semibold">{product?.category}</h2>
               </div>

@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,6 +16,10 @@ import { BsChatSquareQuoteFill } from "react-icons/bs";
 import Rating from "react-rating";
 import StarRatings from "react-star-ratings";
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div>
       <section>
@@ -29,10 +35,11 @@ const Testimonials = () => {
             clickable: true,
           }}
           modules={[Pagination]}
-          className="mySwiper h-96"
+          className="mySwiper lg:h-96"
         >
           <SwiperSlide>
-            <div className="text-center px-24 flex flex-col items-center justify-center gap-6 bg-[#C1DCDC] p-10">
+            <div className="text-center px-24 flex flex-col items-center justify-center gap-6 bg-[#C1DCDC] p-10" data-aos="fade-right"
+        data-aos-duration="2000">
               <p>
                 "I recently purchased a Fiddle Leaf Fig from GreenMind, and I
                 couldn't be happier! The website is easy to navigate, with
@@ -63,7 +70,8 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="text-center px-24 flex flex-col items-center justify-center gap-6 bg-[#C1DCDC] p-10">
+            <div className="text-center px-24 flex flex-col items-center justify-center gap-6 bg-[#C1DCDC] p-10" data-aos="fade-right"
+        data-aos-duration="3000">
               <p>
                 "I absolutely love shopping on GreenMind! The selection of
                 indoor plants is fantastic, and the prices are very reasonable.

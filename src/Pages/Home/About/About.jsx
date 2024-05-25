@@ -11,7 +11,7 @@ const About = () => {
             <h1 className='text-4xl font-bold mb-10'>About Us</h1>
                 <p className='text-gray-500 font-medium'>Order now and appreciate the beauty of nature</p>
             </section>
-            <section className='flex mx-auto gap-20 justify-center text-center mt-12'>
+            <section className='lg:flex mx-auto gap-20 justify-center text-center mt-12'>
             <div >
                 <div className=' p-4 avatar rounded-full text-center bg-[#C1DCDC] mx-auto mb-6'>
                 <PiPottedPlantDuotone  size={40} />

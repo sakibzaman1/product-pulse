@@ -13,7 +13,7 @@ const Banner = () => {
       }, []);
     
     return (
-        <div className='bg-[#C1DCDC] rounded-xl flex justify-between'>
+        <div className='bg-[#C1DCDC] rounded-xl lg:flex justify-between'>
             <section className='w-[40%] space-y-16 mt-10 px-10 pt-10 '>
                 <div>
                     <h1 className='text-6xl font-bold'  data-aos="fade-left"

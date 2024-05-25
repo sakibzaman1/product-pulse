@@ -53,8 +53,8 @@ const Products = () => {
 
     return (
         <div>
-            <div className="flex justify-between my-10">
-                <div className="flex gap-4">
+            <div className="lg:flex justify-between my-10">
+                <div className="lg:flex gap-4">
                     <select onChange={(e) => setSortCriteria(e.target.value)} className="select select-bordered">
                         <option value="">Sort by</option>
                         <option value="price-asc">Price: Low to High</option>
@@ -80,7 +80,7 @@ const Products = () => {
                     </select>
                 </div>
             </div>
-            <div className='grid grid-cols-4 gap-6 my-20'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 my-20'>
                 {
                     currentProducts?.map(product => <ProductCard key={product?._id} product={product}></ProductCard>)
                 }
