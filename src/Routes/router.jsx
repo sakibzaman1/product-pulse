@@ -17,6 +17,9 @@ import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
 import ManageProduct from '../Pages/Dashboard/Admin/ManageProduct';
+import UserProduct from '../Pages/Dashboard/User/UserProduct';
+import UserReview from '../Pages/Dashboard/User/UserReview';
+import UserPayment from '../Pages/Dashboard/User/UserPayment';
 
 const router = createBrowserRouter([
     {
@@ -67,6 +70,18 @@ const router = createBrowserRouter([
         {
           path: 'userProfile',
           element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },
+        {
+          path: 'userProduct',
+          element: <UserProduct></UserProduct>
+        },
+        {
+          path: 'userReview',
+          element: <UserReview></UserReview>
+        },
+        {
+          path: 'userPayment',
+          element: <UserPayment></UserPayment>
         },
         {
           path: 'adminProfile',

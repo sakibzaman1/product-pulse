@@ -67,13 +67,13 @@ const Dashboard = () => {
                       <NavLink to='/dashboard/userProfile'>Home</NavLink>
                     </li>
                     <li>
-                      <NavLink>My Product</NavLink>
+                      <NavLink to='/dashboard/userProduct'>My Product</NavLink>
                     </li>
                     <li>
-                      <NavLink>Payment</NavLink>
+                      <NavLink to='/dashboard/userPayment'>Payment</NavLink>
                     </li>
                     <li>
-                      <NavLink>Reviews</NavLink>
+                      <NavLink to='/dashboard/userReview'>Reviews</NavLink>
                     </li>
                    
                   </ul>

@@ -93,7 +93,7 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className=" text-xl font-mono font-bold">GREENMIND</a>
+          <a className=" text-xl font-limelight font-bold">GREENMIND</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-10 text-sm">
