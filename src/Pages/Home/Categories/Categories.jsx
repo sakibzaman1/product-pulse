@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "./categories.css"; // Import custom styles
 import { Pagination, Zoom } from "swiper/modules";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [products, setProducts] = useState([]);
@@ -53,8 +54,8 @@ const Categories = () => {
          
         </Swiper>
         <div className="text-center mx-auto space-y-12 mt-10">
-          <p>Trees and plants always look like the people they live with, somehow.</p>
-          <button className='text-center mx-auto font-bold w-48 px-10 py-6 h-2 bg-white flex justify-center items-center rounded-xl'>Explore<IoIosArrowRoundForward size={30} className='ml-6' /></button>
+          <p className="mb-8">Trees and plants always look like the people they live with, somehow.</p>
+          <Link to='/categoryPage'><button className='text-center mx-auto font-bold w-48 px-10 py-6 h-2 bg-white flex justify-center items-center rounded-xl'>Explore<IoIosArrowRoundForward size={30} className='ml-6' /></button></Link>
           </div>
       </section>
     </div>

@@ -10,7 +10,7 @@ const Search = () => {
       // Fetch movie data from MongoDB
       // You can use fetch or any library like axios to fetch data
       // For simplicity, I'm assuming you have a function called fetchMoviesFromMongoDB
-      fetch(`/products.json`)
+      fetch(`https://product-pulse-server-five.vercel.app/products`)
           .then(res=> res.json())
           .then(data=> setProducts(data))
     }, []);
@@ -44,7 +44,7 @@ const Search = () => {
       {searchQuery && (
         <div className="z-10 search-results rounded-b-xl absolute top-full left-0 bg-transparent bg-opacity-90 shadow-lg w-[100%]">
           {matchingProducts.map(product => (
-            <Link to={`/filmDetails/${product?._id}`} onClick={handleLinkClick} key={product?._id}>
+            <Link to={`/productDetails/${product?._id}`} onClick={handleLinkClick} key={product?._id}>
             <div className='flex space-y-8 items-center gap-2 pl-4' >
                 <img className='w-10 h-8  avatar' src={product?.images[0]} alt="" />
                 <p className='text-sm h-12'>{product?.name}</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../Layouts/MainLayout/MainLayout';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
@@ -8,6 +8,13 @@ import Products from '../Pages/Products/Products';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import ProductDetails from '../Components/ProductDetails/ProductDetails';
 import CategoryPage from '../Pages/CategoryPage/CategoryPage';
+import Dashboard from '../Pages/Dashboard/Dashboard';
+import Contact from '../Pages/Contact/Contact';
+
+import PrivateRoute from '../PrivateRoutes/PrivateRoute';
+import UserProfile from '../Pages/Dashboard/User/UserProfile';
+import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
+import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
 
 const router = createBrowserRouter([
     {
@@ -34,15 +41,41 @@ const router = createBrowserRouter([
           element: <CategoryPage></CategoryPage>
         },
         {
+          path: '/contact',
+          element: <Contact></Contact>
+        },
+        {
             path: '/login',
             element: <Login></Login>
         },
         {
             path: '/register',
             element: <Register></Register>
-        }
+        },
       ]
     },
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children: [
+        {
+          path: '', // Empty path for the default route
+          element: <Navigate to="userProfile" />
+        },
+        {
+          path: 'userProfile',
+          element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },
+        {
+          path: 'adminProfile',
+          element: <AdminProfile></AdminProfile>
+        },
+        {
+          path: 'manageUsers', 
+          element: <ManageUsers></ManageUsers>
+        },
+      ]
+    }
   ]);
 
 export default router;

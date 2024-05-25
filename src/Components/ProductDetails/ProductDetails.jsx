@@ -16,11 +16,19 @@ import {
   AiOutlineLike,
 } from "react-icons/ai";
 import Recaptcha from "react-recaptcha";
+import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "react-share";
+import { IoIosShareAlt } from "react-icons/io";
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
+  const thisProduct = useLoaderData();
   const currentDate = new Date().toISOString();
   const [disabled, setDisabled] = useState(true)
+
+  const fbShareUrl = "https://www.facebook.com/";
+    const twitterShareUrl = "https://twitter.com/";
+    const pinterestShareUrl = "https://www.pinterest.com/";
+
 
   const captchaRef = useRef(null)
 
@@ -57,7 +65,7 @@ const ProductDetails = () => {
     if (liked) setLiked(false); // If liked, reset liked state
   };
 
-  const thisProduct = useLoaderData();
+  
 
   useEffect(() => {
     AOS.init();
@@ -131,6 +139,36 @@ const ProductDetails = () => {
     setReply('');
   };
 
+  // handleBuy
+
+  const handleBuy = () => {
+    const myProduct = {
+      id: thisProduct?._id,
+      email: user?.email,
+      name: user?.displayName
+    };
+
+    fetch("https://product-pulse-server-five.vercel.app/sold", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(myProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        swal({
+          position: "top-center",
+          icon: "success",
+          title: "Successfully Bought",
+          showConfirmButton: false,
+          showCancelButton: false,
+          timer: 2000,
+        });
+      });
+  };
+
   return (
     <div className="my-10" data-aos="zoom-in" data-aos-duration="2000">
       <div className="card card-compact  bg-base-100 shadow-xl">
@@ -181,6 +219,7 @@ const ProductDetails = () => {
                 <IoPricetagOutline size={50} />
               </span>
               <span className="text-5xl ml-4">${thisProduct?.price}</span>
+             <button onClick={handleBuy}> <span className="text-xl ml-4 bg-gradient-to-r from-transparent to-green-400 px-2 py-1">Buy Now</span></button>
             </p>
           </div>
           <h2>
@@ -192,8 +231,8 @@ const ProductDetails = () => {
             starDimension="40px"
             starSpacing="15px"
           />
-          <div className="my-10 flex items-center">
-            <div className="w-[80%]">
+          <div className="my-10 flex  items-center">
+            <div className="w-[70%]">
               <h1 className="my-6 text-start text-2xl">Your Opinion</h1>
               <form className="flex flex-col w-[50%]" onSubmit={handleReview}>
                 <textarea
@@ -230,8 +269,18 @@ const ProductDetails = () => {
                 </button>
               </form>
             </div>
+            <div className="divider lg:divider-horizontal"></div> 
             <div className="w-[30%]">
               <img className="" src={surveyImg} alt="" />
+              <div className="flex justify-center gap-4 items-center">
+                <h1 className="text-green-800">Also Share on </h1><IoIosShareAlt size={30} />
+              <FacebookShareButton url={fbShareUrl}>
+      <FacebookIcon size={40} round={true}  />
+      </FacebookShareButton>
+      <TwitterShareButton url={twitterShareUrl}>
+      <TwitterIcon size={40} round={true} />
+      </TwitterShareButton>
+              </div>
             </div>
           </div>
         </div>

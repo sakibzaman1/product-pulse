@@ -37,7 +37,7 @@ const Footer = () => {
 </footer>
 <footer className="footer footer-start p-4 bg-[#C1DCDC] text-base-content">
   <aside>
-    <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © 2024 - All right reserved by GREENMIND</p>
   </aside>
 </footer>
         </div>
