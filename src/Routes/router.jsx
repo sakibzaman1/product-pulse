@@ -15,6 +15,8 @@ import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import UserProfile from '../Pages/Dashboard/User/UserProfile';
 import AdminProfile from '../Pages/Dashboard/Admin/AdminProfile';
 import ManageUsers from '../Pages/Dashboard/Admin/ManageUsers';
+import ManageReviews from '../Pages/Dashboard/Admin/ManageReviews';
+import ManageProduct from '../Pages/Dashboard/Admin/ManageProduct';
 
 const router = createBrowserRouter([
     {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
         {
           path: 'manageUsers', 
           element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: 'manageReviews', 
+          element: <ManageReviews></ManageReviews>
+        },
+        {
+          path: 'manageProduct', 
+          element: <ManageProduct></ManageProduct>
         },
       ]
     }

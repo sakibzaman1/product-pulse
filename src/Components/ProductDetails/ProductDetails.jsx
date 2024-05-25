@@ -18,6 +18,7 @@ import {
 import Recaptcha from "react-recaptcha";
 import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "react-share";
 import { IoIosShareAlt } from "react-icons/io";
+import Recommendation from "../Recommendation/Recommendation";
 
 const ProductDetails = () => {
   const { user } = useContext(AuthContext);
@@ -172,7 +173,7 @@ const ProductDetails = () => {
   return (
     <div className="my-10" data-aos="zoom-in" data-aos-duration="2000">
       <div className="card card-compact  bg-base-100 shadow-xl">
-        <div className="flex justify-center gap-24 mb-6 items-center">
+        <div className="flex justify-center gap-32 mb-6 items-center">
           {thisProduct?.images?.map((image) => (
             <img
               image={image}
@@ -349,11 +350,17 @@ const ProductDetails = () => {
             ))}
           </div>
         ) : (
-          <p className="mb-10">No Reviews yet.</p>
+          <p className="mb-10 text-center">No Reviews yet.</p>
         )}
 
       
       </div>
+      <hr />
+      {/* recommendation */}
+      <section>
+        <h1 className="text-center text-5xl font-semibold my-20">Recommended For You</h1>
+          <Recommendation></Recommendation>
+      </section>
     </div>
   );
 };

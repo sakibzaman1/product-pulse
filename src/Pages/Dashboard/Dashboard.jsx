@@ -6,7 +6,7 @@ import Footer from '../../Shared/Footer/Footer';
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
-    const isAdmin = user?.email?.toLowerCase() === "sak20@gmail.com";
+    const isAdmin = user?.email?.toLowerCase() === "zaman@gmail.com";
     return (
       <div className='max-w-7xl mx-auto'>
        <section>
@@ -35,10 +35,10 @@ const Dashboard = () => {
                       <NavLink to='/dashboard/manageUsers'>Manage Users</NavLink>
                     </li>
                     <li>
-                      <NavLink>Manage Reviews</NavLink>
+                      <NavLink to='/dashboard/manageReviews'>Manage Reviews</NavLink>
                     </li>
                     <li>
-                      <NavLink>Add Product</NavLink>
+                      <NavLink to='/dashboard/manageProduct'>Manage Product</NavLink>
                     </li>
                   </ul>{" "}
                 </div>
